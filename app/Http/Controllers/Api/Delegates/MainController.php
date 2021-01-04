@@ -25,7 +25,7 @@ class MainController extends Controller
 
     public function acceptOrder(Request $request)
     {
-        $orders = Order::where('id', $request->id)->where('client_id', $request->client_id)->first();
+        $orders = Order::where('id', $request->id)->first();
 
         if (!$orders) {
             return responseJson(0, 'لا يمكن الحصول على بيانات الطلب');
@@ -89,7 +89,7 @@ class MainController extends Controller
             $connectus->update(['image' => 'public/uploads/connectus/' . $name]);
             $connectus['image'] = 'public/uploads/connectus/' . $name;
         }
-        
+
         return responseJson(1, 'تم الارسال بنجاح', $connectus);
     }
 
