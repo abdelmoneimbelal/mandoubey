@@ -1,49 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7d5bdb45-f3e8-4f4b-a6e9-3afa45d16ea1" name="Default Changelist" comment="update file">
-      <change afterPath="$PROJECT_DIR$/resources/views/governrates/index.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/users/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/mandoubey.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/mandoubey.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/City.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/City.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Client.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Client.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Delegate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Delegate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/DeliveryMethod.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/DeliveryMethod.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Governorate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Governorate.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Clients/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Clients/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Clients/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Clients/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Delegates/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Delegates/AuthController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/Delegates/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/Delegates/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/CityController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/CityController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/ClientController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DelegateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DelegateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DeliveryMethodController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DeliveryMethodController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/GovernorateController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/GovernorateController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SectionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SectionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Kernel.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Kernel.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/app.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2014_10_12_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_19_122237_create_clients_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_19_122237_create_clients_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_19_122237_create_delegates_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_19_122237_create_delegates_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_19_122237_create_governorates_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_19_122237_create_governorates_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2020_12_29_123612_create_delivery_methods_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2020_12_29_123612_create_delivery_methods_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/clients/AC9iHhxougzjuL5UlmRRZyu3fKdjUx1iSDHQfBTf.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/clients/Lh7Y14mFyF76IQlyER3SmgFcdD1WnJcLn0btGt43.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/clients/PYxgEDNgHYQGWWfRBo2meBSHTgfasdkIVYog95fs.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/delegates/8O21rNXURjkshZ44vWsWmSDoCTntmunL1WlIyYhY.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/delegates/CqT21ZoDHMtHX8RVWnJu8NwvJgDiiQWxbQJEDn6Q.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/uploads/delegates/gWjxdhtAHC4A0eaVR0adRipyacmDk41OscaVcAMn.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="7d5bdb45-f3e8-4f4b-a6e9-3afa45d16ea1" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,8 +19,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/users/index.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+            <state relative-caret-position="46">
+              <caret line="2" selection-start-line="2" selection-end-line="2" />
             </state>
           </provider>
         </entry>
@@ -296,36 +254,6 @@
               <item name="mandoubey" type="b2602c69:ProjectViewProjectNode" />
               <item name="mandoubey" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="mandoubey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mandoubey" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mandoubey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mandoubey" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mandoubey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mandoubey" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mandoubey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mandoubey" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="roles" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="mandoubey" type="b2602c69:ProjectViewProjectNode" />
-              <item name="mandoubey" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="users" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
@@ -406,12 +334,20 @@
       <workItem from="1610004406641" duration="22087000" />
       <workItem from="1610352301563" duration="21526000" />
       <workItem from="1610436779308" duration="22944000" />
-      <workItem from="1610522917589" duration="3667000" />
+      <workItem from="1610522917589" duration="5451000" />
     </task>
+    <task id="LOCAL-00001" summary="update file">
+      <created>1610526939254</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1610526939254</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="313150000" />
+    <option name="totallyTimeSpent" value="314934000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -421,7 +357,7 @@
       <window_info id="Structure" order="1" sideWeight="0.50085473" side_tool="true" weight="0.23373677" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.32991454" />
+      <window_info anchor="bottom" id="Messages" weight="0.32991454" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -430,7 +366,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.32991454" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5015129" side_tool="true" weight="0.32991454" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49848714" weight="0.32991454" />
@@ -444,18 +380,19 @@
       <window_info id="Structure" order="1" sideWeight="0.50085473" side_tool="true" weight="0.23373677" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" order="8" />
-      <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.5015129" side_tool="true" weight="0.32991454" />
-      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49848714" weight="0.32991454" />
+      <window_info anchor="bottom" id="Messages" order="0" weight="0.32991454" />
+      <window_info anchor="bottom" id="Message" order="1" />
+      <window_info anchor="bottom" id="Find" order="2" />
+      <window_info anchor="bottom" id="Run" order="3" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="9" />
+      <window_info anchor="bottom" id="Database Changes" order="10" />
+      <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5015129" side_tool="true" weight="0.32991454" />
+      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49848714" weight="0.32991454" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -465,18 +402,14 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="UpdateCopyrightCheckinHandler">
+    <option name="UPDATE_COPYRIGHT" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="update file" />
     <option name="LAST_COMMIT_MESSAGE" value="update file" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/Governorate.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" column="49" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2020_12_19_122237_create_connect_us_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
@@ -880,10 +813,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Foundation/ProviderRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/users/index.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="12" lean-forward="true" selection-start-line="4" selection-start-column="12" selection-end-line="4" selection-end-column="12" />
+        <state relative-caret-position="46">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
         </state>
       </provider>
     </entry>
