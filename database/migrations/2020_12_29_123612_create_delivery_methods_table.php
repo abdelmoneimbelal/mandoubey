@@ -11,7 +11,7 @@ class CreateDeliveryMethodsTable extends Migration
         Schema::create('delivery_methods', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('image')->default('public/uploads/delivery_methods/default.png');
+            $table->string('image')->nullable()->default('default.png');
             $table->timestamps();
         });
     }

@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,19 +15,28 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.login');
 });
 
-Auth::routes();
+Auth::routes(['register' => false]);
+//Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::resource('delegates', 'DelegateController');
-Route::resource('governorate', 'GovernorateController');
-Route::resource('city', 'CityController');
-Route::resource('client', 'ClientController');
-Route::resource('message', 'MessageController');
-Route::resource('shipping-price', 'ShippingPriceController');
-Route::resource('order', 'OrderController');
-Route::resource('notification', 'NotificationController');
-Route::resource('connect-us', 'ConnectUsController');
+Route::group(['middleware' => ['auth']], function () {
+    Route::get('/home', 'HomeController@index')->name('home');
+    Route::resource('delegates', 'DelegateController');
+    Route::post('/status-delegates/{id}', 'DelegateController@statusUpdate')->name('status-delegates');
+    Route::resource('governorates', 'GovernorateController');
+    Route::resource('cities', 'CityController');
+    Route::resource('delivery-method', 'DeliveryMethodController');
+    Route::resource('clients', 'ClientController');
+    Route::post('/status-update/{id}', 'ClientController@statusUpdate')->name('status-update');
+    Route::resource('message', 'MessageController');
+    Route::resource('sections', 'SectionController');
+    Route::resource('shipping-price', 'ShippingPriceController');
+    Route::resource('order', 'OrderController');
+    Route::resource('notification', 'NotificationController');
+    Route::resource('connect-us', 'ConnectUsController');
+    Route::resource('roles', 'RoleController');
+    Route::resource('users', 'UserController');
+});
+Route::get('/{page}', 'AdminController@index');

@@ -31,6 +31,7 @@ class Client extends Authenticatable
         return $this->hasMany('App\Notification');
     }
 
+
     protected $hidden = [
         'password', 'api_token',
     ];

@@ -50,7 +50,7 @@ class AuthController extends Controller
                     })
                     ->save(public_path('/uploads/delegates/' . $request->file('photo')->hashName()));
 
-                $request_data['photo'] = 'public/uploads/delegates/' . $request->file('photo')->hashName();
+                $request_data['photo'] = '/uploads/delegates/' . $request->file('photo')->hashName();
 
             }//end of if
             if ($request->hasFile('id_front')) {
@@ -61,7 +61,7 @@ class AuthController extends Controller
                     })
                     ->save(public_path('/uploads/delegates/' . $request->file('id_front')->hashName()));
 
-                $request_data['id_front'] = 'public/uploads/delegates/' . $request->file('id_front')->hashName();
+                $request_data['id_front'] = '/uploads/delegates/' . $request->file('id_front')->hashName();
 
             }//end of if
             if ($request->hasFile('id_back')) {
@@ -72,7 +72,7 @@ class AuthController extends Controller
                     })
                     ->save(public_path('/uploads/delegates/' . $request->file('id_back')->hashName()));
 
-                $request_data['id_back'] = 'public/uploads/delegates/' . $request->file('id_back')->hashName();
+                $request_data['id_back'] = '/uploads/delegates/' . $request->file('id_back')->hashName();
 
             }//end of if
 
@@ -103,6 +103,10 @@ class AuthController extends Controller
 
         //$auth = auth()->guard('api')->validator($request->all());
         $delegate = Delegate::where('phone', $request->phone)->first();
+
+        if ($delegate->status !== 'active') {
+            return responseJson(0, ' حسابك مغلق مؤقتا قم بالرجوع للاداره');
+        }
         if ($delegate) {
             $api_token = str::random(60);
             $delegate->update(['api_token' => $api_token]);
@@ -165,7 +169,7 @@ class AuthController extends Controller
             $name = time() . '' . rand(11111, 99999) . '.' . $extension; // renameing image
             $photo->move($destinationPath, $name); // uploading file to given path
             $loginUser->update(['photo' => 'uploads/delegates/' . $name]);
-            $loginUser['photo'] = 'public/uploads/delegates/' . $name;
+            $loginUser['photo'] = '/uploads/delegates/' . $name;
         }
 
         $loginUser->save();

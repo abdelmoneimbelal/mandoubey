@@ -9,7 +9,9 @@ class DeliveryMethod extends Model
 
     protected $table = 'delivery_methods';
     public $timestamps = true;
-    protected $fillable = array('name');
+    protected $fillable = ['name', 'image'];
+
+//    protected $appends = ['image_path'];
 
     public function orders()
     {
@@ -21,4 +23,9 @@ class DeliveryMethod extends Model
         return $this->belongsTo('App\DeliveryMethod');
     }
 
+//    public function getImagePathAttribute()
+//    {
+//        return asset('/uploads/delivery_methods/' . $this->image);
+//
+//    }//end of get image path
 }

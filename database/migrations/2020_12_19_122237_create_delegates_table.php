@@ -18,7 +18,7 @@ class CreateDelegatesTable extends Migration
             $table->integer('governorate_id')->unsigned();
             $table->enum('shipping_method', array('now', 'soon'));
             $table->enum('status', array('active', 'inactive'))->default('inactive');
-            $table->string('photo')->nullable()->default('public/uploads/delegates/default.png');
+            $table->string('photo')->nullable()->default('uploads/delegates/default.png');
             $table->string('id_front');
             $table->string('id_back');
             $table->enum('payment_method', array('before', 'after'));

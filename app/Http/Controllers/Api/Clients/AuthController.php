@@ -46,7 +46,7 @@ class AuthController extends Controller
                     })
                     ->save(public_path('/uploads/clients/' . $request->file('photo')->hashName()));
 
-                $request_data['photo'] = 'public/uploads/clients/' . $request->file('photo')->hashName();
+                $request_data['photo'] = '/uploads/clients/' . $request->file('photo')->hashName();
 
             }//end of if
             if ($request->hasFile('id_front')) {
@@ -57,7 +57,7 @@ class AuthController extends Controller
                     })
                     ->save(public_path('/uploads/clients/' . $request->file('id_front')->hashName()));
 
-                $request_data['id_front'] = 'public/uploads/clients/' . $request->file('id_front')->hashName();
+                $request_data['id_front'] = '/uploads/clients/' . $request->file('id_front')->hashName();
 
             }//end of if
             if ($request->hasFile('id_back')) {
@@ -68,14 +68,13 @@ class AuthController extends Controller
                     })
                     ->save(public_path('/uploads/clients/' . $request->file('id_back')->hashName()));
 
-                $request_data['id_back'] = 'public/uploads/clients/' . $request->file('id_back')->hashName();
+                $request_data['id_back'] = '/uploads/clients/' . $request->file('id_back')->hashName();
 
             }//end of if
 
             $client = Client::create($request_data);
             $client->api_token = str::random(60);
             $client->save();
-
             return responseJson(1, 'تم الاضافة بنجاح', [
                 'api_token' => $client->api_token,
                 'client' => $client]);
@@ -90,6 +89,7 @@ class AuthController extends Controller
         $validator = validator()->make($request->all(), [
             'phone' => 'required',
             'password' => 'required',
+            'status' => 'active',
         ]);
 
         if ($validator->fails()) {
@@ -98,6 +98,10 @@ class AuthController extends Controller
 
         //$auth = auth()->guard('api')->validator($request->all());
         $client = client::where('phone', $request->phone)->first();
+
+        if ($client->status !== 'active') {
+            return responseJson(0, ' حسابك مغلق مؤقتا قم بالرجوع للاداره');
+        }
 
         if ($client) {
             $api_token = str::random(60);
@@ -137,10 +141,9 @@ class AuthController extends Controller
 
         if ($request->hasFile('photo')) {
             if ($request->file('photo') != 'default.png') {
-
                 Storage::disk('public_uploads')->delete('/clients/' . $client->photo);
-
             }//end of inner if
+
             $path = public_path();
             $destinationPath = $path . '/uploads/clients/'; // upload path
             $photo = $request->file('photo');
@@ -148,7 +151,7 @@ class AuthController extends Controller
             $name = time() . '' . rand(11111, 99999) . '.' . $extension; // renameing image
             $photo->move($destinationPath, $name); // uploading file to given path
             $loginUser->update(['photo' => 'uploads/clients/' . $name]);
-            $loginUser['photo'] = 'public/uploads/clients/' . $name;
+            $loginUser['photo'] = '/uploads/clients/' . $name;
         }
 
         $loginUser->save();

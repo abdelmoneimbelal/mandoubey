@@ -9,13 +9,13 @@ class City extends Model
 
     protected $table = 'cities';
     public $timestamps = true;
-    protected $fillable = array('name', 'governorates', 'governrate_id');
+    protected $fillable = array('name', 'governorates', 'governorate_id');
 
-    protected $primaryKey = 'governorate_id';
+//    protected $primaryKey = 'governorate_id';
 
-    public function governorates()
+    public function governorate()
     {
-        return $this->belongsTo('App\Governorate', 'governrate_id');
+        return $this->belongsTo('App\Governorate');
     }
 
 }

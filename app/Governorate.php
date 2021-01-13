@@ -9,7 +9,7 @@ class Governorate extends Model
 
     protected $table = 'governorates';
     public $timestamps = true;
-    protected $fillable = array('name', 'price');
+    protected $fillable = array('governorate_name', 'price');
 
     public function cities()
     {

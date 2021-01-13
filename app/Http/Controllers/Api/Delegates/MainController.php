@@ -15,8 +15,9 @@ class MainController extends Controller
     public function myOrders(Request $request)
     {
         $orders = $request->user()->orders()->where(function ($order) use ($request) {
-            if ($request->has('acceptable') && $request->status == 'accepted') {
-                $order->where('status', '!=', 'pending');
+
+            if ($request->has('acceptable') && $request->acceptable == 'accepted') {
+                $order->where('acceptable', '!=', 'pending');
             }
 
         })->latest()->paginate(10);
@@ -45,7 +46,7 @@ class MainController extends Controller
                 'order_id' => $request->id,
                 'delegate_id' => auth('delegate')->user()->id,
             ]);
-//
+
             $tokens = $client->tokens()->where('token', '!=', null)->pluck('token')->toArray();
             if (count($tokens)) {
                 public_path();
@@ -63,7 +64,7 @@ class MainController extends Controller
         }
     }
 
-    public function connectUs(Request $request, ConnectUs $connectUs)
+    public function connectUs(Request $request)
     {
         $validation = validator()->make($request->all(), [
             'type' => 'required|in:problems,suggestions,balance,others',
@@ -72,7 +73,6 @@ class MainController extends Controller
         ]);
 
         if ($validation->fails()) {
-
             return responseJson(0, $validation->errors()->first());
         }
 
@@ -87,7 +87,7 @@ class MainController extends Controller
             $name = time() . '' . rand(11111, 99999) . '.' . $extension; // renameing image
             $photo->move($destinationPath, $name); // uploading file to given path
             $connectus->update(['image' => 'public/uploads/connectus/' . $name]);
-            $connectus['image'] = 'public/uploads/connectus/' . $name;
+            $connectus['image'] = '/uploads/connectus/' . $name;
         }
 
         return responseJson(1, 'تم الارسال بنجاح', $connectus);

@@ -58,6 +58,7 @@ Route::group(['prefix' => 'v1', 'namespace' => 'Api'], function () {
             Route::post('remove-token', 'Delegates\AuthController@removeToken');
             Route::post('accept-order', 'Delegates\MainController@acceptOrder');
             Route::post('connect-us', 'Delegates\MainController@connectUs');
+            Route::get('my-order', 'Delegates\MainController@myOrders');
         });
     });
 });

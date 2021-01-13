@@ -16,7 +16,7 @@ class CreateClientsTable extends Migration
             $table->string('terms');
             $table->string('password')->nullable();
             $table->string('pin_code')->nullable();
-            $table->string('photo')->nullable()->default('public/uploads/delegates/default.png');
+            $table->string('photo')->nullable()->default('uploads/delegates/default.png');
             $table->string('id_front');
             $table->string('id_back');
             $table->enum('status', array('active', 'inactive'))->default('inactive');

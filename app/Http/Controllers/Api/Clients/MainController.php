@@ -54,7 +54,7 @@ class MainController extends Controller
                     })
                     ->save(public_path('/uploads/orders/' . $request->file('image')->hashName()));
 
-                $request_data['image'] = 'public/uploads/orders/' . $request->file('image')->hashName();
+                $request_data['image'] = '/uploads/orders/' . $request->file('image')->hashName();
 
             }//end of if
 
@@ -140,7 +140,7 @@ class MainController extends Controller
             $name = time() . '' . rand(11111, 99999) . '.' . $extension; // renameing image
             $photo->move($destinationPath, $name); // uploading file to given path
             $connectus->update(['image' => 'public/uploads/connectus/' . $name]);
-            $connectus['image'] = 'public/uploads/connectus/' . $name;
+            $connectus['image'] = '/uploads/connectus/' . $name;
         }
 
 

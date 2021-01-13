@@ -9,7 +9,7 @@ class Delegate extends Authenticatable
 
     protected $table = 'delegates';
     public $timestamps = true;
-    protected $fillable = array('name', 'email', 'whatsapp', 'phone', 'password', 'type', 'governorate_id', 'id_front', 'id_back', 'photo', 'delivery_method_id', 'api_token', 'terms');
+    protected $fillable = array('name', 'email', 'whatsapp', 'phone', 'password', 'type', 'governorate_id', 'id_front', 'id_back', 'photo', 'status', 'delivery_method_id', 'api_token', 'terms');
 
     public function governorate()
     {
