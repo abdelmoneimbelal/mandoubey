@@ -11,12 +11,12 @@ class ConnectUs extends Model
     public $timestamps = true;
     protected $fillable = array('type', 'content', 'image', 'client_id', 'delegate_id');
 
-    public function clients()
+    public function client()
     {
         return $this->belongsTo('App\Client');
     }
 
-    public function delegates()
+    public function delegate()
     {
         return $this->belongsTo('App\Delegate');
     }

@@ -1,16 +1,17 @@
-<!-- main-header opened -->
+<><!-- main-header opened -->
 <div class="main-header sticky side-header nav nav-item">
     <div class="container-fluid">
         <div class="main-header-left ">
             <div class="responsive-logo">
-                <a href="{{ url('/' . $page='index') }}"><img src="{{URL::asset('assets/img/brand/logo.png')}}"
-                                                              class="logo-1" alt="logo"></a>
-                <a href="{{ url('/' . $page='index') }}"><img src="{{URL::asset('assets/img/brand/logo-white.png')}}"
-                                                              class="dark-logo-1" alt="logo"></a>
-                <a href="{{ url('/' . $page='index') }}"><img src="{{URL::asset('assets/img/brand/favicon.png')}}"
-                                                              class="logo-2" alt="logo"></a>
-                <a href="{{ url('/' . $page='index') }}"><img src="{{URL::asset('assets/img/brand/favicon.png')}}"
-                                                              class="dark-logo-2" alt="logo"></a>
+                <a href="{{ url('/' . $page='home') }}"><img src="{{URL::asset('assets/img/brand/logo.png')}}"
+                                                             class="logo-1" alt="logo"></a>
+                <a href="{{ url('/' . $page='home') }}"><img
+                            src="{{URL::asset('assets/img/brand/logo-white.png')}}"
+                            class="dark-logo-1" alt="logo"></a>
+                <a href="{{ url('/' . $page='home') }}"><img src="{{URL::asset('assets/img/brand/favicon.png')}}"
+                                                             class="logo-2" alt="logo"></a>
+                <a href="{{ url('/' . $page='home') }}"><img src="{{URL::asset('assets/img/brand/favicon.png')}}"
+                                                             class="dark-logo-2" alt="logo"></a>
             </div>
             <div class="app-sidebar__toggle" data-toggle="sidebar">
                 <a class="open-toggle" href="#"><i class="header-icon fe fe-align-left"></i></a>
@@ -32,11 +33,9 @@
 												<svg xmlns="http://www.w3.org/2000/svg" class="header-icon-svgs"
                                                      viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                                      stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                                     class="feather feather-search"><circle cx="11" cy="11"
-                                                                                            r="8"></circle><line x1="21"
-                                                                                                                 y1="21"
-                                                                                                                 x2="16.65"
-                                                                                                                 y2="16.65"></line></svg>
+                                                     class="feather feather-search">
+                                                    <circle cx="11" cy="11" r="8"></circle>
+                                                    <line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
 											</button>
 										</span>
                         </div>
@@ -50,7 +49,8 @@
                     <div class="dropdown-menu">
                         <div class="main-header-profile bg-primary p-3">
                             <div class="d-flex wd-100p">
-                                <div class="main-img-user"><img alt="" src="{{URL::asset('assets/img/faces/6.jpg')}}"
+                                <div class="main-img-user"><img alt=""
+                                                                src="{{URL::asset('assets/img/faces/6.jpg')}}"
                                                                 class=""></div>
                                 <div class="mr-3 my-auto">
                                     <h6>{{Auth::user()->name}}</h6><span>{{Auth::user()->email}}</span>
@@ -69,4 +69,4 @@
         </div>
     </div>
 </div>
-<!-- /main-header -->
+<!-- /main-header --></>

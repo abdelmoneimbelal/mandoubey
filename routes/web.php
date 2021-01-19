@@ -33,7 +33,7 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('message', 'MessageController');
     Route::resource('sections', 'SectionController');
     Route::resource('shipping-price', 'ShippingPriceController');
-    Route::resource('order', 'OrderController');
+    Route::resource('orders', 'OrderController');
     Route::resource('notification', 'NotificationController');
     Route::resource('connect-us', 'ConnectUsController');
     Route::resource('roles', 'RoleController');

@@ -9,6 +9,13 @@ use Illuminate\Support\Facades\Storage;
 class ClientController extends Controller
 {
 
+    function __construct()
+    {
+        $this->middleware('permission:المستخدمين', ['only' => ['index']]);
+        $this->middleware('permission:عرض مستخدم', ['only' => ['show']]);
+        $this->middleware('permission:حذف مستخدم', ['only' => ['destroy']]);
+    }
+
     /**
      * Display a listing of the resource.
      *

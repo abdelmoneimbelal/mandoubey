@@ -73,10 +73,12 @@
         <div class="col-xl-12">
             <div class="card mg-b-20">
                 <div class="card-header pb-0">
-                    <div class="d-flex justify-content-between">
-                        <a class="modal-effect btn btn-outline-primary btn-block" data-effect="effect-scale"
-                           data-toggle="modal" href="#modaldemo8">اضافة طريقة توصيل</a>
-                    </div>
+                    @can('اضافة طريقة توصيل')
+                        <div class="d-flex justify-content-between">
+                            <a class="modal-effect btn btn-outline-primary btn-block" data-effect="effect-scale"
+                               data-toggle="modal" href="#modaldemo8">اضافة طريقة توصيل</a>
+                        </div>
+                    @endcan
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -99,20 +101,22 @@
                                              src="{{asset('/uploads/delivery_methods/' . $deliveryMethod->image)}}">
                                     </td>
                                     <td>
-                                        <a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"
-                                           data-id="{{ $deliveryMethod->id }}"
-                                           data-name="{{ $deliveryMethod->name }}"
-                                           data-image="{{ $deliveryMethod->image }}" data-toggle="modal"
-                                           href="#exampleModal2"
-                                           title="تعديل"><i class="las la-pen"></i></a>
-
-                                        <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
-                                           data-id="{{ $deliveryMethod->id }}"
-                                           data-name="{{ $deliveryMethod->name }}"
-                                           data-toggle="modal"
-                                           href="#modaldemo9" title="حذف"><i class="las la-trash"></i>
-                                        </a>
-
+                                        @can('تعديل طريقة توصيل')
+                                            <a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"
+                                               data-id="{{ $deliveryMethod->id }}"
+                                               data-name="{{ $deliveryMethod->name }}"
+                                               data-image="{{ $deliveryMethod->image }}" data-toggle="modal"
+                                               href="#exampleModal2"
+                                               title="تعديل"><i class="las la-pen"></i></a>
+                                        @endcan
+                                        @can('حذف طريقة توصيل')
+                                            <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
+                                               data-id="{{ $deliveryMethod->id }}"
+                                               data-name="{{ $deliveryMethod->name }}"
+                                               data-toggle="modal"
+                                               href="#modaldemo9" title="حذف"><i class="las la-trash"></i>
+                                            </a>
+                                        @endcan
                                     </td>
                                 </tr>
                             @endforeach

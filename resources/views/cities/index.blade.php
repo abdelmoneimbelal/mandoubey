@@ -73,10 +73,12 @@
         <div class="col-xl-12">
             <div class="card mg-b-20">
                 <div class="card-header pb-0">
-                    <div class="d-flex justify-content-between">
-                        <a class="modal-effect btn btn-outline-primary btn-block" data-effect="effect-scale"
-                           data-toggle="modal" href="#modaldemo8">اضافة مدينه</a>
-                    </div>
+                    @can('اضافة مدينه')
+                        <div class="d-flex justify-content-between">
+                            <a class="modal-effect btn btn-outline-primary btn-block" data-effect="effect-scale"
+                               data-toggle="modal" href="#modaldemo8">اضافة مدينه</a>
+                        </div>
+                    @endcan
                 </div>
                 <div class="card-body">
                     <div class="table-responsive">
@@ -97,21 +99,23 @@
                                     <td>{{$city->name}}</td>
                                     <td>{{$city->governorate->governorate_name}}</td>
                                     <td>
-                                        <a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"
-                                           data-id="{{ $city->id }}"
-                                           data-name="{{ $city->name }}"
-                                           data-governorate_name="{{$city->governorate->governorate_name}}"
-                                           data-toggle="modal"
-                                           href="#exampleModal2"
-                                           title="تعديل"><i class="las la-pen"></i></a>
-
-                                        <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
-                                           data-id="{{ $city->id }}"
-                                           data-name="{{ $city->name }}"
-                                           data-toggle="modal"
-                                           href="#modaldemo9" title="حذف"><i class="las la-trash"></i>
-                                        </a>
-
+                                        @can('تعديل مدينه')
+                                            <a class="modal-effect btn btn-sm btn-info" data-effect="effect-scale"
+                                               data-id="{{ $city->id }}"
+                                               data-name="{{ $city->name }}"
+                                               data-governorate_name="{{$city->governorate->governorate_name}}"
+                                               data-toggle="modal"
+                                               href="#exampleModal2"
+                                               title="تعديل"><i class="las la-pen"></i></a>
+                                        @endcan
+                                        @can('حذف مدينه')
+                                            <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
+                                               data-id="{{ $city->id }}"
+                                               data-name="{{ $city->name }}"
+                                               data-toggle="modal"
+                                               href="#modaldemo9" title="حذف"><i class="las la-trash"></i>
+                                            </a>
+                                        @endcan
                                     </td>
                                 </tr>
                             @endforeach
@@ -126,7 +130,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content modal-content-demo">
                     <div class="modal-header">
-                        <h6 class="modal-title">اضافة محافظه</h6>
+                        <h6 class="modal-title">اضافة مدينه</h6>
                         <button aria-label="Close" class="close" data-dismiss="modal" type="button"><span
                                     aria-hidden="true">&times;</span></button>
                     </div>
@@ -204,7 +208,7 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content modal-content-demo">
                     <div class="modal-header">
-                        <h6 class="modal-title">حذف القسم</h6>
+                        <h6 class="modal-title">حذف المدينه</h6>
                         <button aria-label="Close" class="close" data-dismiss="modal"
                                 type="button"><span aria-hidden="true">&times;</span></button>
                     </div>

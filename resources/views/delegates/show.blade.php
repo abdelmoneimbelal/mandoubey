@@ -190,22 +190,25 @@
                                            id="Username" class="form-control tx-18"
                                            readonly>
                                 </div>
-                                <div class="row">
-                                    <div class="col">
-                                        <label for="exampleTextarea">حالة المستخدم</label>
-                                        <select class="form-control" id="status" name="status" required>
-                                            <option selected="true" disabled="disabled">-- حدد حالة المستخدم --</option>
-                                            <option value="active">مفعل</option>
-                                            <option value="inactive">غير مفعل</option>
-                                        </select>
+                                @can('حالة المستخدم')
+                                    <div class="row">
+                                        <div class="col">
+                                            <label for="exampleTextarea">حالة المستخدم</label>
+                                            <select class="form-control" id="status" name="status" required>
+                                                <option selected="true" disabled="disabled">-- حدد حالة المستخدم --
+                                                </option>
+                                                <option value="active">مفعل</option>
+                                                <option value="inactive">غير مفعل</option>
+                                            </select>
+                                        </div>
                                     </div>
+                                    <br>
 
-                                </div>
-                                <br>
-
-                                <button class="btn btn-primary waves-effect waves-light w-md" type="submit">تغير حالة
-                                    المستخدم
-                                </button>
+                                    <button class="btn btn-primary waves-effect waves-light w-md" type="submit">تغير
+                                        حالة
+                                        المستخدم
+                                    </button>
+                                @endcan
                             </form>
 
                         </div>

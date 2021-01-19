@@ -53,6 +53,7 @@ class AuthController extends Controller
                 $request_data['photo'] = '/uploads/delegates/' . $request->file('photo')->hashName();
 
             }//end of if
+            
             if ($request->hasFile('id_front')) {
 //            $filename = date('Y-m-d-H:i:s')."-".$image->getClientOriginalName();
                 Image::make($request->file('id_front'))
@@ -104,10 +105,10 @@ class AuthController extends Controller
         //$auth = auth()->guard('api')->validator($request->all());
         $delegate = Delegate::where('phone', $request->phone)->first();
 
-        if ($delegate->status !== 'active') {
-            return responseJson(0, ' حسابك مغلق مؤقتا قم بالرجوع للاداره');
-        }
         if ($delegate) {
+            if ($delegate->status !== 'active') {
+                return responseJson(0, ' حسابك مغلق مؤقتا قم بالرجوع للاداره');
+            }
             $api_token = str::random(60);
             $delegate->update(['api_token' => $api_token]);
             if (Hash::check($request->password, $delegate->password)) {

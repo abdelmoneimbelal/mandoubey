@@ -89,7 +89,7 @@ class AuthController extends Controller
         $validator = validator()->make($request->all(), [
             'phone' => 'required',
             'password' => 'required',
-            'status' => 'active',
+//            'status' => 'active',
         ]);
 
         if ($validator->fails()) {
@@ -99,11 +99,10 @@ class AuthController extends Controller
         //$auth = auth()->guard('api')->validator($request->all());
         $client = client::where('phone', $request->phone)->first();
 
-        if ($client->status !== 'active') {
-            return responseJson(0, ' حسابك مغلق مؤقتا قم بالرجوع للاداره');
-        }
-
         if ($client) {
+            if ($client->status !== 'active') {
+                return responseJson(0, ' حسابك مغلق مؤقتا قم بالرجوع للاداره');
+            }
             $api_token = str::random(60);
             $client->update(['api_token' => $api_token]);
             if (Hash::check($request->password, $client->password)) {

@@ -10,6 +10,14 @@ use Intervention\Image\Facades\Image;
 class DeliveryMethodController extends Controller
 {
 
+    function __construct()
+    {
+        $this->middleware('permission:طرق التوصيل', ['only' => ['index']]);
+        $this->middleware('permission:اضافة طريقة توصيل', ['only' => ['store']]);
+        $this->middleware('permission:تعديل طريقة توصيل', ['only' => ['update']]);
+        $this->middleware('permission:حذف طريقة توصيل', ['only' => ['destroy']]);
+    }
+
     /**
      * Display a listing of the resource.
      *

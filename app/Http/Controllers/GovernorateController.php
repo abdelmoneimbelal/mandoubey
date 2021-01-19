@@ -9,6 +9,14 @@ use Illuminate\Http\Request;
 class GovernorateController extends Controller
 {
 
+    function __construct()
+    {
+        $this->middleware('permission:المحافظات', ['only' => ['index']]);
+        $this->middleware('permission:اضافة محافظه', ['only' => ['create', 'store']]);
+        $this->middleware('permission:تعديل محافظه', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:حذف محافظه', ['only' => ['destroy']]);
+    }
+
     /**
      * Display a listing of the resource.
      *

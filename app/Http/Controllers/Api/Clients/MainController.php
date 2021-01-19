@@ -66,7 +66,7 @@ class MainController extends Controller
             $delegates = Delegate::where('type', $request->type)->where('delivery_method_id', $request->delivery_method_id)->get();
 
             Notification::create([
-                'title' => ' طلب جديد',
+                'title' => 'طلب جديد',
                 'content' => 'لديك طلب جديد من العميل ' . $request->user()->name,
                 'order_id' => $order->id,
                 'client_id' => auth()->user()->id,
@@ -139,12 +139,18 @@ class MainController extends Controller
             $extension = $photo->getClientOriginalExtension(); // getting image extension
             $name = time() . '' . rand(11111, 99999) . '.' . $extension; // renameing image
             $photo->move($destinationPath, $name); // uploading file to given path
-            $connectus->update(['image' => 'public/uploads/connectus/' . $name]);
+            $connectus->update(['image' => '/uploads/connectus/' . $name]);
             $connectus['image'] = '/uploads/connectus/' . $name;
         }
 
 
         return responseJson(1, 'تم الارسال بنجاح', $connectus);
+    }
+
+    public function notifications(Request $request)
+    {
+        $notifications = $request->user()->notifications()->latest()->paginate(20);
+        return responseJson(1, 'تم التحميل', $notifications);
     }
 }
 

@@ -95,15 +95,17 @@
                                         @endif
                                     </td>
                                     <td>
-                                        <a class="btn btn-sm btn-info"
-                                           href="{{route('delegates.show', $delegate->id)}}" title="عرض"><i
-                                                    class="las la-eye"></i></a>
-                                    </td>
-                                    <td>
-                                        <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
-                                           data-id="{{ $delegate->id }}" data-name="{{ $delegate->name }}"
-                                           data-toggle="modal"
-                                           href="#modaldemo9" title="حذف"><i class="las la-trash"></i></a>
+                                        @can('عرض مستخدم')
+                                            <a class="btn btn-sm btn-info"
+                                               href="{{route('delegates.show', $delegate->id)}}" title="عرض"><i
+                                                        class="las la-eye"></i></a>
+                                        @endcan
+                                        @can('حذف مستخدم')
+                                            <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
+                                               data-id="{{ $delegate->id }}" data-name="{{ $delegate->name }}"
+                                               data-toggle="modal"
+                                               href="#modaldemo9" title="حذف"><i class="las la-trash"></i></a>
+                                        @endcan
                                     </td>
                                 </tr>
                             @endforeach

@@ -9,34 +9,22 @@
     <link href="{{URL::asset('assets/plugins/select2/css/select2.min.css')}}" rel="stylesheet">
     <!--Internal   Notify -->
     <link href="{{ URL::asset('assets/plugins/notify/css/notifIt.css') }}" rel="stylesheet"/>
+@endsection
 @section('title')
-    العملاء
-@stop
-
+    تواصل معنا
 @endsection
 @section('page-header')
     <!-- breadcrumb -->
     <div class="breadcrumb-header justify-content-between">
         <div class="my-auto">
             <div class="d-flex">
-                <h2 class="content-title mb-0 my-auto">العملاء</h2>
+                <h2 class="content-title mb-0 my-auto">تواصل معنا</h2>
             </div>
         </div>
     </div>
     <!-- breadcrumb -->
 @endsection
 @section('content')
-
-    @if (session()->has('edit'))
-        <script>
-            window.onload = function () {
-                notif({
-                    msg: "تم التحديث بنجاح",
-                    type: "primary"
-                })
-            }
-        </script>
-    @endif
 
     @if (session()->has('delete'))
         <script>
@@ -62,48 +50,52 @@
                             <thead>
                             <tr>
                                 <th class="border-bottom-0">#</th>
-                                <th class="border-bottom-0">الاسم</th>
-                                <th class="border-bottom-0">البريد</th>
-                                <th class="border-bottom-0">الهاتف</th>
-                                <th class="border-bottom-0">الصوره</th>
-                                <th class="wd-15p border-bottom-0">حالة المستخدم</th>
+                                <th class="border-bottom-0"> نوع الرساله</th>
+                                <th class="border-bottom-0"> اسم المتسخدم</th>
                                 <th class="border-bottom-0">العمليات</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($clients as $client)
+                            @foreach($connects as $connect)
 
                                 <tr>
                                     <td>{{$loop->iteration}}</td>
-                                    <td>{{$client->name}}</td>
-                                    <td>{{$client->email}}</td>
-                                    <td>{{$client->phone}}</td>
                                     <td>
-                                        <img width="50px" class="img-thumbnail" src="{{asset($client->photo)}}">
-                                    </td>
-                                    <td>
-                                        @if ($client->status === 'active')
+                                        @if ($connect->type === 'problems')
                                             <span class="label text-success d-flex">
-                                                <div class="dot-label bg-success ml-1"></div><span
-                                                        class="badge badge-pill badge-success">مفعل</span>
+                                               <span class="badge badge-pill badge-warning">المشاكل</span>
+                                            </span>
+                                        @elseif($connect->type === 'suggestions')
+                                            <span class="label text-success d-flex">
+                                                <span class="badge badge-pill badge-success">الاقتراحات</span>
+                                            </span>
+                                        @elseif($connect->type === 'balance')
+                                            <span class="label text-success d-flex">
+                                               <span class="badge badge-pill badge-info">الرصيد</span>
                                             </span>
                                         @else
-                                            <span class="label text-danger d-flex">
-                                                <div class="dot-label bg-danger ml-1"></div><span
-                                                        class="badge badge-pill badge-danger">غير مفعل</span>
+                                            <span class="label text-success d-flex">
+                                                <span class="badge badge-pill badge-dark">اخرى</span>
                                             </span>
                                         @endif
                                     </td>
                                     <td>
-                                        @can('عرض مستخدم')
+                                        @if($connect->client_id != '')
+                                            {{$connect->client->name}}
+                                        @elseif($connect->delegate_id != '')
+                                            {{$connect->delegate->name}}
+                                        @endif
+                                    </td>
+                                    <td>
+                                        @can('عرض تواصل معنا')
                                             <a class="btn btn-sm btn-info"
-                                               href="{{route('clients.show', $client->id)}}" title="عرض"><i
-                                                        class="las la-eye"></i></a>
+                                               href="{{route('connect-us.show', $connect->id)}}" title="عرض">
+                                                <i class="las la-eye"></i></a>
                                         @endcan
-                                        @can('حذف مستخدم')
+
+                                        @can('حذف تواصل معنا')
                                             <a class="modal-effect btn btn-sm btn-danger" data-effect="effect-scale"
-                                               data-id="{{ $client->id }}" data-name="{{ $client->name }}"
-                                               data-toggle="modal"
+                                               data-id="{{ $connect->id }}" data-toggle="modal"
                                                href="#modaldemo9" title="حذف"><i class="las la-trash"></i></a>
                                         @endcan
                                     </td>
@@ -121,17 +113,16 @@
             <div class="modal-dialog modal-dialog-centered" role="document">
                 <div class="modal-content modal-content-demo">
                     <div class="modal-header">
-                        <h6 class="modal-title">حذف القسم</h6>
+                        <h6 class="modal-title">حذف الرساله</h6>
                         <button aria-label="Close" class="close" data-dismiss="modal"
                                 type="button"><span aria-hidden="true">&times;</span></button>
                     </div>
-                    <form action="clients/destroy" method="post">
+                    <form action="connect-us/destroy" method="post">
                         {{method_field('delete')}}
                         {{csrf_field()}}
                         <div class="modal-body">
                             <p>هل انت متاكد من عملية الحذف ؟</p><br>
                             <input type="hidden" name="id" id="id" value="">
-                            <input class="form-control" name="name" id="name" type="text" readonly>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">الغاء</button>
@@ -178,10 +169,8 @@
         $('#modaldemo9').on('show.bs.modal', function (event) {
             var button = $(event.relatedTarget)
             var id = button.data('id')
-            var name = button.data('name')
             var modal = $(this)
             modal.find('.modal-body #id').val(id);
-            modal.find('.modal-body #name').val(name);
         })
     </script>
 

@@ -11,14 +11,14 @@ class Order extends Model
     public $timestamps = true;
     protected $fillable = array('lat', 'lat2', 'long', 'long2', 'address', 'address2', 'phone', 'delivery_method_id', 'name', 'title', 'payment_method', 'type', 'section_id', 'weight', 'count', 'price', 'notes', 'shipping_price', 'image', 'client_id', 'delegate_id', 'pin_code', 'delivery_number', 'status', 'acceptable');
 
-    public function clients()
+    public function client()
     {
         return $this->belongsTo('App\Client');
     }
 
     public function notifications()
     {
-        return $this->hasMany('App\Order');
+        return $this->hasMany('App\Notification');
     }
 
     public function deliveryMethod()
@@ -26,12 +26,12 @@ class Order extends Model
         return $this->belongsTo('App\DeliveryMethod');
     }
 
-    public function sections()
+    public function section()
     {
         return $this->belongsTo('App\Section');
     }
 
-    public function delegates()
+    public function delegate()
     {
         return $this->belongsTo('App\Delegate');
     }

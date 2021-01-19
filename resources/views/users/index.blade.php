@@ -115,7 +115,7 @@
                                         @endif
                                     </td>
                                     <td>
-                                        @can('تعديل مستخدم')
+                                        @can('تعديل مشرف')
                                             @if($user->roles_name==["owner"])
                                                 @if(Auth::user()->roles_name == ["owner"])
                                                     <a href="{{ route('users.edit', $user->id) }}"
@@ -129,7 +129,7 @@
                                             @endif
                                         @endcan
 
-                                        @can('حذف مستخدم')
+                                        @can('حذف مشرف')
                                             @if( $user->roles_name == ["owner"])
                                                 @if(Auth::user()->roles_name==["owner"])
                                                     <a class="modal-effect btn btn-sm btn-danger"
